@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html ng-app = "myapp">
+<head>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+
+	<title></title>
+</head>
+<body ng-controller="myCtrl">
+<h3>HH Equation</h3>
+	<form class="form-inline">
+  <div class="form-group">
+    <label for="hco3">HCO3</label>
+    <input type="number" class="form-control" id="hco3" ng-model="hco3">
+  </div>
+  <div class="form-group">
+    <label for="co2">CO2</label>
+    <input type="number" class="form-control" id="co2" ng-model="co2">
+  </div>
+  	<div class="form-group">
+    pH :<label for="co2" ng-bind="6.1 +Math.log10(hco3/(.03*co2))"></label>
+    
+  </div>
+
+</form>
+</body>
+<script type="text/javascript">
+	var app = angular.module('myapp', []);
+	app.controller ("myCtrl", function($scope){
+		$scope.hco3 = 24
+		$scope.co2 = 40
+		$scope.data = $scope.co2 + 89
+		$scope.Math = window.Math;
+
+	})
+	
+</script>
+</html>
